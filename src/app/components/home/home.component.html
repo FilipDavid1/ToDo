@@ -1,0 +1,36 @@
+<div class="container">
+
+    <div class="container-child">
+      <h2>To Do List</h2>
+      <div class="buttons">
+        <button mat-fab color="primary">
+          <mat-icon>add</mat-icon>
+        </button>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Order By:</mat-label>
+          <mat-select [(ngModel)]="selectedValue" name="food">
+            <mat-option *ngFor="let filter of filters" [value]="filter.value">
+              {{ filter.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <mat-accordion>
+        <mat-expansion-panel hideToggle *ngFor="let task of tasks">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ task.title }}
+            </mat-panel-title>
+            <mat-panel-description> click to see details </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="description">
+            {{ task.description }}
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+  
+  
+  <a  [routerLink]="['/task-form']" mat-button>Home</a>

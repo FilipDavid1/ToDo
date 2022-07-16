@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: AppComponent },
-  {path: 'task-form', component: TaskFormComponent},
+  {path: 'home', component: HomeComponent },
+  {path: 'hovnisko', component: TaskFormComponent},
 ];
 
 @NgModule({

@@ -12,12 +12,18 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { HomeComponent } from './components/home/home.component';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskFormComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +36,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatButtonModule,
     MatIconModule,
     MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
     
   ],
   providers: [],
