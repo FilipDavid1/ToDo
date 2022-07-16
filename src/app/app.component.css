@@ -1,0 +1,33 @@
+.container {
+    text-align: center;
+    align-items: center;
+}
+.container h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    background: #000;
+    padding: 10px;
+}
+
+.container-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-child h2 {
+    border: #000;
+    border-style: solid;
+    width: 7em;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
