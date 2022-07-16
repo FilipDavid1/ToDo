@@ -6,7 +6,7 @@
     font-size: 2em;
     font-weight: bold;
     color: #fff;
-    background: #000;
+    background: #673ab7;
     padding: 10px;
 }
 
@@ -18,10 +18,12 @@
 }
 
 .container-child h2 {
+    font-size: xx-large;
     border: #000;
     border-style: solid;
     width: 7em;
     text-align: center;
+    margin-top: 2em;
 }
 
 .buttons {
