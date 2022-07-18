@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
 
 
 
@@ -24,6 +26,7 @@ import {MatInputModule} from '@angular/material/input';
     AppComponent,
     TaskFormComponent,
     HomeComponent,
+    EditTaskComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import {MatInputModule} from '@angular/material/input';
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
+    HttpClientModule,
     
   ],
   providers: [],

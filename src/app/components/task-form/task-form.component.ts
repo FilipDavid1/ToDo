@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/classes/task';
+import { TaskService } from 'src/app/services/task.service';
 
 
 @Component({
@@ -9,13 +10,16 @@ import { Task } from 'src/app/classes/task';
 })
 export class TaskFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
   }
+  correctDate = new Date().toLocaleString().split(',')[0]
 
-  task: Task = new Task('', '', new Date(), false);
+  task: Task = new Task('', '', this.correctDate, false);
 
-  onSubmit() {}
+  onSubmit() {
+    this.taskService.createTask(this.task);
+  }
 
 }
