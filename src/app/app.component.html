@@ -1,2 +1,7 @@
-
+<mat-toolbar color="primary">
+    <a href="home">To Do App</a>
+    <span class="spacer"></span>
+    <button mat-raised-button [routerLink]="['/home']">Home</button>
+    <button mat-raised-button [routerLink]="['/task-form']">Create New Task</button>
+  </mat-toolbar>
 <router-outlet></router-outlet>

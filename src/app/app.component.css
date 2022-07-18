@@ -1,0 +1,15 @@
+a {
+    background-color: #8f65d8;
+    border-radius: 5px;
+    padding: 0.5em;
+    text-decoration: none;
+    color: #fff;
+}
+
+button {
+    margin-right: 2em;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }

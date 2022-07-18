@@ -18,6 +18,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -43,6 +45,8 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
     
   ],
   providers: [],
