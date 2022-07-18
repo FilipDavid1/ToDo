@@ -1,1 +1,26 @@
-<p>edit-task works!</p>
+<div class="center">
+    <form #editTaskForm="ngForm" (ngSubmit)="onSubmit()" class="task-form">
+        <h1>Edit Task</h1>
+        <mat-form-field class="input-container" appearance="fill">
+            <mat-label>Name of Task</mat-label>
+            <input matInput name="task-name" [(ngModel)]="task.title">
+          </mat-form-field>
+        
+            <mat-form-field class="input-container" appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput id="w3review" name="task-description" rows="4" cols="50" [(ngModel)]="task.description"></textarea>
+              </mat-form-field>
+
+            <mat-form-field appearance="fill" class="input-container">
+                <mat-label>Choose your Deadline</mat-label>
+                <input matInput [matDatepicker]="picker" name="task-deadline" [(ngModel)]="task.deadline">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              
+              <br>
+        <button mat-flat-button color="primary" type="submit"
+            [disabled]="!editTaskForm.form.valid"> <span *ngIf="!loading">Update</span> <mat-spinner color="accent" *ngIf="loading" [diameter]="30"></mat-spinner></button>
+    </form>
+</div>
