@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from 'src/app/classes/task';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+    this.getAllTasks();
   }
 
 
-  tasks = [
-    {title: 'Task 1', description: 'descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription', isDone: false},
-    {title: 'Task 2', description: 'description', isDone: false},
-    {title: 'Task 3', description: 'description', isDone: false},
-    {title: 'Task 4', description: 'description', isDone: false},
-  ];
+  tasks: Task[];
 
   selectedValue: string = '';
 
@@ -27,4 +25,21 @@ export class HomeComponent implements OnInit {
     {value: 'active-1', viewValue: 'Active'},
     {value: 'completed-2', viewValue: 'Completed'},
   ];
+
+  getAllTasks() {
+    this.taskService.getTasks().subscribe(
+      data => {
+        this.tasks = data;
+      }
+    );
+  }
+
+  deleteTask(id: number) {
+    this.taskService.deleteTask(id).subscribe(
+      data => {
+        this.getAllTasks();
+      }
+    );
+  }
+
 }

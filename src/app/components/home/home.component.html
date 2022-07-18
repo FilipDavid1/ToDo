@@ -1,9 +1,9 @@
 <div class="container">
 
     <div class="container-child">
-      <h2>To Do List</h2>
+      <h2 style="padding: 0.5em;">To Do List</h2>
       <div class="buttons">
-        <button mat-fab color="primary">
+        <button mat-fab color="primary" [routerLink]="['/task-form']">
           <mat-icon>add</mat-icon>
         </button>
   
@@ -24,13 +24,24 @@
             </mat-panel-title>
             <mat-panel-description> click to see details </mat-panel-description>
           </mat-expansion-panel-header>
-          <div class="description">
-            {{ task.description }}
+          <div class="flex">
+            <div class="description">
+              {{ task.description }}
+            </div>
+            <div class="deadline">
+              <mat-form-field appearance="fill">
+                <mat-label>Deadline</mat-label>
+                <input matInput [matDatepicker]="dp1" disabled [(ngModel)]="task.deadline" name="deadline">
+                <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+                <mat-datepicker #dp1></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="buttons-flex">
+            <button mat-flat-button color="primary" routerLink="/edit-task/{{task.id}}">Edit</button>
+            <button mat-flat-button color="warn" (click)="deleteTask(task.id)">Delete</button>
           </div>
         </mat-expansion-panel>
       </mat-accordion>
     </div>
   </div>
-  
-  
-  <a  [routerLink]="['/task-form']" mat-button>Home</a>
