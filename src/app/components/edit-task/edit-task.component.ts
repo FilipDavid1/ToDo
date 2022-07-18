@@ -26,16 +26,12 @@ export class EditTaskComponent implements OnInit {
     this.taskService.getTask(id).subscribe(response => {
       this.task = response;
       this.id = response.id;
-      console.log(response);
-      
     });
   }
 
   onSubmit(){
     this.loading = true;
-    this.taskService.updateTask(this.task).subscribe(response => {
-      console.log(this.task);
-      
+    this.taskService.updateTask(this.task).subscribe(response => {      
       this.loading = false;
     });
   }

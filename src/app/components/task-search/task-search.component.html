@@ -1,7 +1,7 @@
 <div id="search-component">
-    <label for="search-box">Task Search</label>
     
     <mat-form-field class="input-container" appearance="fill">
+        <mat-label>Task Search</mat-label>
         <input matInput name="task-name" #searchBox id="search-box" (input)="search(searchBox.value)">
       </mat-form-field>
 

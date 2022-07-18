@@ -21,6 +21,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TaskSearchComponent } from './components/task-search/task-search.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { TaskSearchComponent } from './components/task-search/task-search.compon
     MatToolbarModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
-    
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
