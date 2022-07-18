@@ -1,0 +1,16 @@
+<div id="search-component">
+    <label for="search-box">Task Search</label>
+    
+    <mat-form-field class="input-container" appearance="fill">
+        <input matInput name="task-name" #searchBox id="search-box" (input)="search(searchBox.value)">
+      </mat-form-field>
+
+    <ul class="search-result">
+        <li *ngFor="let task of tasks$ | async">
+
+            <a routerLink="/edit-task/{{task.id}}">
+                {{task.title}}
+            </a>
+        </li>
+    </ul>
+</div>

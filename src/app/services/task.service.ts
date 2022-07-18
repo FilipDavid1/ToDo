@@ -49,4 +49,13 @@ export class TaskService {
     return this.http.put<Task>(`https://62d16d0dd4eb6c69e7dd3507.mockapi.io/api//toDos/${task.id}`, task, this.httpOptions);
   }
 
+  searchTasks(term: string): Observable<Task[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Task[]>(`https://62d16d0dd4eb6c69e7dd3507.mockapi.io/api//toDos/?title=${term}`).pipe(
+      catchError(this.handleError<Task[]>('searchTasks', []))
+    );
+  }
+
 }

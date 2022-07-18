@@ -20,6 +20,7 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TaskSearchComponent } from './components/task-search/task-search.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     TaskFormComponent,
     HomeComponent,
     EditTaskComponent,
+    TaskSearchComponent,
   ],
   imports: [
     BrowserModule,
