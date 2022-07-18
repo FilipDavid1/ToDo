@@ -21,6 +21,6 @@
               
               <br>
         <button mat-flat-button color="primary" type="submit"
-            [disabled]="!createTaskForm.form.valid">Create</button>
+            [disabled]="!createTaskForm.form.valid"> <span *ngIf="!loading">Create</span> <mat-spinner color="accent" *ngIf="loading" [diameter]="30"></mat-spinner></button>
     </form>
 </div>

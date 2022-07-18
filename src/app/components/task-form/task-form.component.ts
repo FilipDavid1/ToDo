@@ -14,12 +14,19 @@ export class TaskFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  loading: boolean = false;
+
   correctDate = new Date().toLocaleString().split(',')[0]
 
   task: Task = new Task('', '', this.correctDate, false);
 
   onSubmit() {
-    this.taskService.createTask(this.task);
+    this.loading = true;
+    this.taskService.createTask(this.task).subscribe(
+      data => {
+        this.loading = false;
+      }
+    );
   }
 
 }
