@@ -18,7 +18,7 @@
       </div>
       <mat-accordion>
         <mat-expansion-panel hideToggle *ngFor="let task of tasks">
-          <mat-expansion-panel-header>
+          <mat-expansion-panel-header *ngIf="task.isDone != true">
             <mat-panel-title>
               {{ task.title }}
             </mat-panel-title>
@@ -40,6 +40,7 @@
           <div class="buttons-flex">
             <button mat-flat-button color="primary" routerLink="/edit-task/{{task.id}}">Edit</button>
             <button mat-flat-button color="warn" (click)="deleteTask(task.id)">Delete</button>
+            <button mat-flat-button style="background-color: green; color: white;;" (click)="deleteTask(task.id)">Done <mat-icon>done</mat-icon></button>
           </div>
         </mat-expansion-panel>
       </mat-accordion>

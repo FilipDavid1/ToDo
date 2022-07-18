@@ -42,4 +42,12 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  updateTask(task: Task) {
+    task.isDone = true;
+    this.taskService.updateTask(task).subscribe(
+      data => {
+        this.getAllTasks();
+      }
+    );
+  }
 }
