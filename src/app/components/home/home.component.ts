@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/classes/task';
 import { TaskService } from 'src/app/services/task.service';
+import { MatSelectChange } from '@angular/material/select';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +11,10 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class HomeComponent implements OnInit {
 
+  tasks: Task[] = [];
+  doneTasks: Task[] = [];
+  activeTasks: Task[] = [];
+
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
@@ -16,20 +22,16 @@ export class HomeComponent implements OnInit {
   }
 
 
-  tasks: Task[];
+  selectedOrder = new FormControl();
 
-  selectedValue: string = '';
-
-  filters = [
-    {value: 'all-0', viewValue: 'All'},
-    {value: 'active-1', viewValue: 'Active'},
-    {value: 'completed-2', viewValue: 'Completed'},
-  ];
+  filters = [ 'All', 'Active', 'Done' ];
 
   getAllTasks() {
     this.taskService.getTasks().subscribe(
       data => {
         this.tasks = data;
+        this.activeTasks = data.filter(task => !task.isDone);
+        this.doneTasks = data.filter(task => task.isDone);
       }
     );
   }
@@ -50,4 +52,18 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+
+  dropDownChanged(event: MatSelectChange) {
+    
+    if (event.value == "All") {
+      return this.getAllTasks();
+    }
+    else if (event.value == "Active") {
+      return this.tasks = this.tasks.filter(task => !task.isDone);
+    }
+    else if (event.value == "Done") {
+      return this.tasks = this.tasks.filter(task => task.isDone);
+    }
+  }
 }
+
