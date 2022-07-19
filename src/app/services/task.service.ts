@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { Task } from '../classes/task';
+import { ToDoList } from '../classes/to-do-list';
 
 @Injectable({
   providedIn: 'root'
@@ -27,18 +28,23 @@ export class TaskService {
     }
   }
 
-  createTask(task: Task): Observable<Task> {
-    return this.http.post<Task>('https://62d16d0dd4eb6c69e7dd3507.mockapi.io/api//toDos', task, this.httpOptions).pipe(
-      catchError(this.handleError<Task>('createTask'))
-    );
+  createToDoList(toDoList: ToDoList): Observable<ToDoList> {
+    return this.http.post<ToDoList>('https://62d16d0dd4eb6c69e7dd3507.mockapi.io/api//toDos', toDoList, this.httpOptions);
   }
 
-  getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>('https://62d16d0dd4eb6c69e7dd3507.mockapi.io/api//toDos');
+  getToDoList(id: number): Observable<ToDoList> {
+    return this.http.get<ToDoList>(`https://62d16d0dd4eb6c69e7dd3507.mockapi.io/api//toDos/${id}`);
   }
 
-  getTask(id: number): Observable<Task> {
-    return this.http.get<Task>(`https://62d16d0dd4eb6c69e7dd3507.mockapi.io/api//toDos/${id}`);
+
+
+
+  getToDoLists(): Observable<ToDoList[]> {
+    return this.http.get<ToDoList[]>('https://62d16d0dd4eb6c69e7dd3507.mockapi.io/api//toDos');
+  }
+
+  getTask(name: string): Observable<Task> {
+    return this.http.get<Task>(`https://62d16d0dd4eb6c69e7dd3507.mockapi.io/api//toDos/${name}`);
   }
 
   deleteTask(id: number): Observable<Task> {

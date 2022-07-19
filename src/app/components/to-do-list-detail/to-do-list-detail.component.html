@@ -1,0 +1,64 @@
+<div class="center">
+    <h1>{{toDoList.name}}</h1>
+    <br>
+    <app-task-search></app-task-search>
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="All">
+                <div class="items">
+                    <div *ngFor="let task of allTaskList">
+                        <div class="example-container">
+                            <h3>{{task.title}}</h3>  <br>
+                            <p>{{task.description}}</p> <br>
+                            <mat-form-field appearance="fill" class="input-container">
+                                <mat-label>Deadline Date: </mat-label>
+                                <input matInput [matDatepicker]="picker" name="task-deadline" [(ngModel)]="task.deadlineDate" disabled>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field> <br>
+                            <mat-form-field>
+                                <mat-label>Deadline Date: </mat-label>
+                                <input matInput [matDatepicker]="picker" name="task-time" [(ngModel)]="task.deadlineTime" type="time" disabled>
+                            </mat-form-field>
+                            <button mat-raised-button routerLink="/edit-task/{{task.title}}">Edit</button> <br>
+                            <button mat-raised-button >Done</button>
+                        </div>
+                    </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Active">
+            <div class="items">
+                <div *ngFor="let task of activeTaskList">
+                    <div class="example-container">
+                        <h3>{{task.title}}</h3>  <br>
+                        <p>{{task.description}}</p> <br>
+                        <mat-form-field appearance="fill" class="input-container">
+                            <mat-label>Deadline: </mat-label>
+                            <input matInput [matDatepicker]="picker" name="task-deadline" [(ngModel)]="task.deadlineDate" disabled>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field> <br>
+                        <button mat-raised-button routerLink="/edit-task/{{task.title}}">Edit</button> <br>
+                        <button mat-raised-button >Done</button>
+                    </div>
+                </div>
+        </div>
+        </mat-tab>
+        <mat-tab label="Done">
+            <div class="items">
+                <div *ngFor="let task of doneTaskList">
+                    <div class="example-container">
+                        <h3>{{task.title}}</h3>  <br>
+                        <p>{{task.description}}</p> <br>
+                        <mat-form-field appearance="fill" class="input-container">
+                            <mat-label>Deadline: </mat-label>
+                            <input matInput [matDatepicker]="picker" name="task-deadline" [(ngModel)]="task.deadlineDate" disabled>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field> <br>
+                        <button mat-raised-button routerLink="/edit-task/{{task.title}}">Edit</button> <br>
+                    </div>
+                </div>
+        </div>
+        </mat-tab>
+      </mat-tab-group>
+</div>

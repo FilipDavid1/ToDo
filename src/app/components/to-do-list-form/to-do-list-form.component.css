@@ -1,0 +1,46 @@
+.center {
+    text-align: center;
+    align-items: center;
+}
+
+.input-container {
+    width: 60%;
+}
+
+.expansion {
+    display: flex;
+    padding: 6px 12px;
+    border-top: none;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.task{  
+    text-align: center;
+    margin-top: 80px;
+    width: 60%;
+}
+
+.items {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px;
+}
+
+.example-container {
+    width: 10rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #8f65d8;
+}
+
+.example-container h3 {
+    color: white;
+}
