@@ -19,10 +19,10 @@ export class EditTaskComponent implements OnInit {
   loading: boolean = false;
 
   id: number;
-  task: Task = new Task('', '', '', false);
+  task: Task = new Task('', '', '','', false);
 
   getExercise(){
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.taskService.getTask(id).subscribe(response => {
       this.task = response;
       this.id = response.id;

@@ -1,49 +1,19 @@
 <div class="container">
-
-    <div class="container-child">
-      <h2 style="padding: 0.5em;">To Do List</h2>
-      <div class="buttons">
-        <button mat-fab color="primary" [routerLink]="['/task-form']">
-          <mat-icon>add</mat-icon>
-        </button>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Order By:</mat-label>
-          <mat-select [formControl]="selectedOrder" name="options" (selectionChange)="dropDownChanged($event)">
-            <mat-option *ngFor="let filter of filters" [value]="filter">
-              {{ filter }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <app-task-search></app-task-search>
-      <mat-accordion>
-        <mat-expansion-panel hideToggle *ngFor="let task of tasks">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{ task.title }}
-            </mat-panel-title>
-            <mat-panel-description> click to see details </mat-panel-description>
-          </mat-expansion-panel-header>
-          <div class="flex">
-            <div class="description">
-              {{ task.description }}
-            </div>
-            <div class="deadline">
-              <mat-form-field appearance="fill">
-                <mat-label>Deadline</mat-label>
-                <input matInput [matDatepicker]="dp1" disabled [(ngModel)]="task.deadline" name="deadline">
-                <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
-                <mat-datepicker #dp1></mat-datepicker>
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="buttons-flex">
-            <button mat-flat-button color="primary" routerLink="/edit-task/{{task.id}}">Edit</button>
-            <button mat-flat-button color="warn" (click)="deleteTask(task.id)">Delete</button>
-            <button mat-flat-button style="background-color: green; color: white;;" (click)="updateTask(task)">Done <mat-icon>done</mat-icon></button>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
+  <div class="container-child">
+    <h2 style="padding: 0.5em;">To Do List</h2>
+    <div class="buttons">
+      <button mat-fab color="primary" [routerLink]="['/to-do-list-form']">
+        <mat-icon>add</mat-icon>
+      </button>
     </div>
   </div>
+</div>
+
+<div class="items">
+  <div *ngFor="let list of taskLists">
+    <div class="example-container">
+      <h3>{{list.name}}</h3>
+      <button mat-raised-button routerLink="/to-do-detail/{{list.id}}">Details</button>
+    </div>
+  </div>
+</div>

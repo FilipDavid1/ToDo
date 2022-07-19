@@ -13,7 +13,7 @@
 
             <mat-form-field appearance="fill" class="input-container">
                 <mat-label>Choose your Deadline</mat-label>
-                <input matInput [matDatepicker]="picker" name="task-deadline" [(ngModel)]="task.deadline">
+                <input matInput [matDatepicker]="picker" name="task-deadline" [(ngModel)]="task.deadlineDate">
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
