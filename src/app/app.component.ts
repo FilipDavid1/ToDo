@@ -12,19 +12,6 @@ export class AppComponent {
 
   constructor() {}
 
-
-  
-
-  // addTask(task: string) {
-  //   this.tasks.push(task);
-  // }
-
-  // deleteTask(task: string) {
-  //   this.tasks.splice(this.tasks.indexOf(task), 1);
-  // }
-
-
-
 }
 
 
