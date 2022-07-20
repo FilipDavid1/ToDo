@@ -7,6 +7,18 @@
     padding: 10px;
 }
 
+.example-container-done {
+    width: 22rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(123, 254, 123);
+    color: black;
+}
+
 .example-container {
     width: 22rem;
     max-width: 100%;
@@ -17,4 +29,14 @@
     padding: 10px;
     background-color: #d4d4d4;
     color: black;
+}
+
+.top {
+    text-align: center;
+    align-items: center;
+}
+
+.top h1 {
+    padding: 1em;
+    font-size: xx-large;
 }

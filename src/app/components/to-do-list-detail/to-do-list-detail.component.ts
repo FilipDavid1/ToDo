@@ -50,4 +50,12 @@ export class ToDoListDetailComponent implements OnInit {
       }
     );
   }
+
+  markAsDone(task: Task){
+    this.taskService.updateTask(task).subscribe(
+      data => {
+        this.getToDoList();
+      }
+    )
+  }
 }
