@@ -15,7 +15,6 @@ import { HomeComponent } from './components/home/home.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { EditTaskComponent } from './components/edit-task/edit-task.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -32,7 +31,6 @@ import {MatTabsModule} from '@angular/material/tabs';
   declarations: [
     AppComponent,
     HomeComponent,
-    EditTaskComponent,
     TaskSearchComponent,
     ToDoListFormComponent,
     ToDoListDetailComponent,

@@ -8,7 +8,7 @@
     <ul class="search-result">
         <li *ngFor="let task of tasks$ | async">
 
-            <a routerLink="/edit-task/{{task.id}}">
+            <a routerLink="/to-do-detail/{{task.id}}">
                 {{task.title}}
             </a>
         </li>
